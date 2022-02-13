@@ -67,7 +67,7 @@ describe 'application' do
     # binding.pry
     expect(page).to have_content("pending")
   end
-  it "has a section to fill out description" do
+  it "searches partial matches" do
     visit "/applications/#{@application.id}"
     fill_in('pet_name', with: "be")
     click_button("Search")
@@ -75,5 +75,12 @@ describe 'application' do
     click_button("Adopt Bean")
     expect(current_path).to eq("/applications/#{@application.id}")
   end
-
+  it "the searches are not case sensitive" do
+    visit "/applications/#{@application.id}"
+    fill_in('pet_name', with: "be")
+    click_button("Search")
+    expect(page).to have_content("Bean")
+    click_button("Adopt Bean")
+    expect(current_path).to eq("/applications/#{@application.id}")
+  end
 end
