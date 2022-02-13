@@ -29,9 +29,10 @@ describe 'application' do
   end
   it 'visits the admin_shelters index and displays in reverse Alpha' do
     visit "/admin/shelters"
-
-    expect(@shelter2.name).to appear_before(@shelter3.name)
-    expect(@shelter3.name).to appear_before(@shelter1.name)
+    save_and_open_page
+    #binding.pry
+    expect(@shelter3.name).to appear_before(@shelter2.name)
+    expect(@shelter2.name).to appear_before(@shelter.name)
   end
 
 end

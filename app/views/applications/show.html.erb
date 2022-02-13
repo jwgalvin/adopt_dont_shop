@@ -7,10 +7,12 @@
   <a>Zip    : <%=@app.zip %></a><br>
   <a>Status : <%=@app.status %></a><br>
   <p>description: <%=@app.description %></p>
+
 <h4>Pets attached to this application</h4>
   <% @app.pets.each do |pet| %>
   <%=link_to "#{pet.name}","/pets/#{pet.id}"%><br>
   <%end%>
+  
 <% if @app.status == "In progress" && @app.pets_present > 0%>
   <%=form_with url: "/applications/#{@app.id}", method: :patch, local: true do |form|%>
     <h4><%="Tell us why you'd be a good forever home."%></h4>
