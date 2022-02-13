@@ -14,4 +14,12 @@ class Application < ApplicationRecord
  def add_pet(pet)
    self.pets.push(pet)
  end
+
+ # def search_pets(name)
+ #   Pet.where("name like ?","%#{params[:pet_name]}%")
+ # end
+
+ def pets_present
+   self.pets.count
+ end
 end

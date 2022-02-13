@@ -62,9 +62,18 @@ describe 'application' do
     expect(page).to have_content("Tell us why you'd be a good forever home.")
     fill_in('description', with: "I am a meat popsicle.")
     click_button("Submit")
-    save_and_open_page
+    #save_and_open_page
     expect(current_path).to eq("/applications/#{@application.id}")
     # binding.pry
     expect(page).to have_content("pending")
   end
+  it "has a section to fill out description" do
+    visit "/applications/#{@application.id}"
+    fill_in('pet_name', with: "be")
+    click_button("Search")
+    expect(page).to have_content("Bean")
+    click_button("Adopt Bean")
+    expect(current_path).to eq("/applications/#{@application.id}")
+  end
+
 end
