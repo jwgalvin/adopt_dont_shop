@@ -14,3 +14,13 @@ petes = Shelter.create!(foster_program: true,
 
 needs = Shelter.create!(foster_program: true,
           name: "Need a pom", city: "oldminster", rank: 8)
+
+
+bean = franks.pets.create!(
+          name: "Bean", adoptable: true, age: 1, breed: "cat")
+
+lean = petes.pets.create!(
+          name: "Lean", adoptable: true, age: 3, breed: "ferret")
+
+sean = needs.pets.create!(
+          name: "Sean", adoptable: true, age: 5, breed: "dragon")
