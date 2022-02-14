@@ -1,5 +1,14 @@
 <h1><%= "Shelter's in your feifdom." %> </h1>
 
 <% @admshelters.each do |shelter| %>
-<%= shelter.name %> <br>
+<ul>
+<li><%= shelter.name %></li>
+</ul>
+<%end%>
+
+<h5> Pending Adoptions by shelter</h5>
+<% @pendingadoptions.each do |adoption| %>
+<ul>
+  <li><%=adoption.name%></li>
+</ul>
 <%end%>

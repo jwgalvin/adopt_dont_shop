@@ -28,11 +28,11 @@ describe 'application' do
               name: "Lean", adoptable: true, age: 3, breed: "ferret")
     @sean = @needs.pets.create!(
               name: "Sean", adoptable: true, age: 5, breed: "dragon")
-    @pet_app_1 = PetApplication.create!(pet_id: @bean.id, application_id: @app1)
-    @pet_app_2 = PetApplication.create!(pet_id: @lean.id, application_id: @app2)
-    @pet_app_3 = PetApplication.create!(pet_id: @sean.id, application_id: @app3)
+    @pet_app_1 = PetApplication.create!(pet_id: @bean.id, application_id: @app1.id)
+    @pet_app_2 = PetApplication.create!(pet_id: @lean.id, application_id: @app2.id)
+    @pet_app_3 = PetApplication.create!(pet_id: @sean.id, application_id: @app3.id)
   end
-  
+
   it 'visits the admin_shelters index and displays in reverse Alpha' do
     visit "/admin/shelters"
     #binding.pry
