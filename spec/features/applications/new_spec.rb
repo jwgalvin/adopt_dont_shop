@@ -55,10 +55,7 @@ describe 'Creates a new application' do
     fill_in('city', with: 'Greendale')
 
     click_on('Submit')
-
+    # save_and_open_page
     expect(page).to have_content('Fill out the form completely.')
-
   end
-
-  
 end

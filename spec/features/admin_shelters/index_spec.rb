@@ -42,7 +42,7 @@ describe 'application' do
 
   it "displays pending applications" do
     visit "/admin/shelters"
-    save_and_open_page
+    # save_and_open_page
     expect(page).to have_content(@franks.name)
     expect(page).to have_content(@petes.name)
     expect(page).to have_content(@needs.name)
