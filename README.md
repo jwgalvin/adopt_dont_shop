@@ -1,3 +1,5 @@
+<h1> Adopt don't shop!</h1>
+
 <h3> Set correct versions</h2>
 Make sure you have ruby v 2.7.4 & rails 5.2.6
 <h3> Get the app's up and running!</h3>
