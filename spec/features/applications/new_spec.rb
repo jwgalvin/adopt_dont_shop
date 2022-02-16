@@ -36,7 +36,6 @@ describe 'Creates a new application' do
     fill_in('city', with: 'Greendale')
     fill_in('state', with: 'CO')
     fill_in('zip', with: '09876')
-    #save_and_open_page
     click_on('Submit')
 
     expect(current_path).to eq("/applications/#{Application.last.id}")
@@ -55,7 +54,6 @@ describe 'Creates a new application' do
     fill_in('city', with: 'Greendale')
 
     click_on('Submit')
-    # save_and_open_page
     expect(page).to have_content('Fill out the form completely.')
   end
 end

@@ -35,14 +35,12 @@ describe 'application' do
 
   it 'visits the admin_shelters index and displays in reverse Alpha' do
     visit "/admin/shelters"
-    #binding.pry
     expect(@needs.name).to appear_before(@petes.name)
     expect(@petes.name).to appear_before(@franks.name)
   end
 
   it "displays pending applications" do
     visit "/admin/shelters"
-    # save_and_open_page
     expect(page).to have_content(@franks.name)
     expect(page).to have_content(@petes.name)
     expect(page).to have_content(@needs.name)

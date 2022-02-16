@@ -37,7 +37,6 @@ describe 'admin show page:' do
   it "has lists all pets attached to application and approves 1." do
     visit "/admin/applications/#{@app1.id}"
     click_button("Approve Bean")
-    #save_and_open_page
     expect(page).to have_content("Bean's status is Approved.")
     expect(page).to_not have_content("Lean's status is Approved.")
   end
@@ -45,7 +44,6 @@ describe 'admin show page:' do
   it "has lists every pet there is on an application rejects 1." do
     visit "/admin/applications/#{@app1.id}"
     click_button("Reject Bean")
-    #save_and_open_page
     expect(page).to have_content("Bean's status is Rejected.")
     expect(page).to_not have_content("Lean's status is Approved.")
     expect(page).to_not have_content("Bean's status is Approved.")
@@ -56,7 +54,6 @@ describe 'admin show page:' do
     click_button("Reject Lean")
     expect(current_path).to eq("/admin/applications/#{@app1.id}")
     visit "/admin/applications/#{@app2.id}"
-    #save_and_open_page
     expect(page).to have_button("Approve Lean")
     expect(page).to have_button("Reject Lean")
   end

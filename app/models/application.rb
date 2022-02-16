@@ -12,10 +12,10 @@ class Application < ApplicationRecord
   has_many :pets, through: :pet_applications
 
  def add_pet(pet)
-   self.pets.push(pet)
+   pets.push(pet)
  end
 
  def pets_present
-   self.pets.count
+   pets.count
  end
 end
