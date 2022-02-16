@@ -1,11 +1,9 @@
+<h1>This application is for <%="#{@app.name}"%>.</h1>
     <% @app.pets.each do |pet| %>
+    <h4> Pertains to <%= "#{pet.name}"%>'s status for adoption</h4>
     <% pet_app = pet.pet_applications%>
-
       <%if pet_app.first.status == "pending"%>
-        <%# pet_app.each do |pet| %>
         <%=button_to "Approve #{pet.name}", method: :post, params:{ status: 'Approved', id: pet_app.first.pet_id}, action: "update", url: "/admin/applications/:id"%>
-        <% #binding.pry %>
-
         <%=button_to "Reject #{pet.name}", method: :post, params:{ status: 'Rejected', id: pet_app.first.pet_id}, action: "update", url: "/admin/applications/:id"%>
       <% else pet_app.first.status == "Approved"%>
         <%= "#{pet.name}'s status is #{pet_app.first.status}." %>

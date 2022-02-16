@@ -51,5 +51,13 @@ describe 'admin show page:' do
     expect(page).to_not have_content("Bean's status is Approved.")
   end
 
-#Pet.find(pet_app.pet_id).name
+  it "tests US13" do
+    visit "/admin/applications/#{@app1.id}"
+    click_button("Reject Lean")
+    expect(current_path).to eq("/admin/applications/#{@app1.id}")
+    visit "/admin/applications/#{@app2.id}"
+    save_and_open_page
+    expect(page).to have_button("Approve Lean")
+    expect(page).to have_button("Reject Lean")
+  end
 end
