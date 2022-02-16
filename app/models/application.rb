@@ -15,7 +15,6 @@ class Application < ApplicationRecord
    self.pets.push(pet)
  end
 
-
  def pets_present
    self.pets.count
  end

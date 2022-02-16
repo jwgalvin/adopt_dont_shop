@@ -9,7 +9,6 @@ class ApplicationsController < ApplicationController
 
   def adoption
     app = Application.find(params[:id])
-    #binding.pry
     pet = Pet.find(params[:pet_id])
     app.add_pet(pet)
     redirect_to "/applications/#{app.id}"
