@@ -6,9 +6,9 @@
 </ul>
 <%end%>
 
-<h5> Pending Adoptions by shelter</h5>
-<% @pendingadoptions.each do |adoption| %>
+<h3> Shelters that have pending adoptions.</h3>
+<% @pendingadoptions.each do |shelter| %>
 <ul>
-  <li><%=adoption.name%></li>
+  <li><%=shelter.name%></li>
 </ul>
 <%end%>

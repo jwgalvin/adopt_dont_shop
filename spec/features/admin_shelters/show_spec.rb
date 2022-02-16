@@ -56,7 +56,7 @@ describe 'admin show page:' do
     click_button("Reject Lean")
     expect(current_path).to eq("/admin/applications/#{@app1.id}")
     visit "/admin/applications/#{@app2.id}"
-    save_and_open_page
+    #save_and_open_page
     expect(page).to have_button("Approve Lean")
     expect(page).to have_button("Reject Lean")
   end
