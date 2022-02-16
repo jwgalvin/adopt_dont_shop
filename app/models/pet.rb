@@ -6,11 +6,11 @@ class Pet < ApplicationRecord
   has_many :applications
   has_many :pet_applications
   has_many :applications, through: :pet_applications
-  
+
   def shelter_name
     shelter.name
   end
-
+  
   def self.adoptable
     where(adoptable: true)
   end

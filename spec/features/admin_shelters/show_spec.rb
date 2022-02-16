@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'admin show page time' do
+describe 'admin show page:' do
   before(:each) do
     @franks = Shelter.create!(foster_program: true,
               name: "frankie's friendly felines",
@@ -34,21 +34,22 @@ describe 'admin show page time' do
     @pet_app_3 = PetApplication.create!(pet_id: @sean.id, application_id: @app3.id)
   end
 
-  it "has lists every pet there is on an application and approves 1." do
+  it "has lists all pets attached to application and approves 1." do
     visit "/admin/applications/#{@app1.id}"
     click_button("Approve Bean")
-    save_and_open_page
+    #save_and_open_page
     expect(page).to have_content("Bean's status is Approved.")
-    #expect(page).to_not have_content("Lean's status is Approved.")
+    expect(page).to_not have_content("Lean's status is Approved.")
   end
 
   it "has lists every pet there is on an application rejects 1." do
     visit "/admin/applications/#{@app1.id}"
     click_button("Reject Bean")
-    save_and_open_page
+    #save_and_open_page
     expect(page).to have_content("Bean's status is Rejected.")
-    #expect(page).to_not have_content("Lean's status is Approved.")
+    expect(page).to_not have_content("Lean's status is Approved.")
+    expect(page).to_not have_content("Bean's status is Approved.")
   end
 
-
+#Pet.find(pet_app.pet_id).name
 end
